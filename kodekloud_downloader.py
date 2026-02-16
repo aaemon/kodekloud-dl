@@ -176,11 +176,6 @@ class KodeKloudDownloader:
         lesson_title = lesson.get('title', 'Unknown Lesson')
         lesson_id = lesson.get('id')
         lesson_type = lesson.get('type')
-        
-        # Check if lesson already completed
-        if self._is_lesson_completed(course_slug, module_id, lesson_id):
-            print(f"  Skipping (already completed): {lesson_title}")
-            return
 
         # Flattened structure: Save directly to output_dir (which is the Module folder)
         target_dir = output_dir 
@@ -191,11 +186,17 @@ class KodeKloudDownloader:
         md_filename = f"{safe_lesson_title}.md"
         md_path = os.path.join(target_dir, md_filename)
         
-        # Check if file already exists
+        # Check if file already exists on disk (primary check)
         if os.path.exists(md_path):
             print(f"  Skipping (file exists): {lesson_title}")
-            self._mark_lesson_completed(course_slug, course_title, module_id, lesson_id)
+            # Mark as completed if not already marked
+            if not self._is_lesson_completed(course_slug, module_id, lesson_id):
+                self._mark_lesson_completed(course_slug, course_title, module_id, lesson_id)
             return
+        
+        # If file doesn't exist but marked as completed in progress, re-download it
+        if self._is_lesson_completed(course_slug, module_id, lesson_id):
+            print(f"  Re-downloading (file missing): {lesson_title}")
 
         print(f"  Downloading: {lesson_title} ({lesson_type})")
 
