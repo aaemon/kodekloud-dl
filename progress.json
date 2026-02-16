@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-16T14:55:34.178565Z",
+  "last_updated": "2026-02-16T15:46:10.097962Z",
   "courses": {
     "crash-course-docker-for-absolute-beginner": {
       "title": "Crash Course: Docker For Absolute Beginners",
@@ -675,6 +675,167 @@
       "completed_lessons": {
         "24982811-6142-4554-afd8-2b5f3b8a7f28": [
           "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "cloud-computing-fundamentals": {
+      "title": "Cloud Computing Fundamentals",
+      "completed_modules": [],
+      "completed_lessons": {
+        "011c3039-0ef4-42f9-8ac1-0633bb3bf667": [
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "jenkins-for-beginners": {
+      "title": "Jenkins For Beginners",
+      "completed_modules": [],
+      "completed_lessons": {
+        "d923e9ad-da6b-4f99-85ce-a148e17c27d2": [
+          "4328f59e-41fa-42c8-a47c-558de5a98463",
+          "33cc13a4-f7fe-4e08-83f1-55c00ad6f42f",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "3c1739a1-ee72-4285-a832-4ce3c95b784d": [
+          "036ff957-465c-4c77-9685-20bbe15ecd9c",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "6a945431-1040-4467-b874-ef7d24d5a6a0": [
+          "e3858b7c-eae0-420b-af3e-621a6f121ab5"
+        ],
+        "cd53a160-c852-4d65-b718-31b284cb48da": [
+          "e3858b7c-eae0-420b-af3e-621a6f121ab5",
+          "94f8fa25-e666-4c41-a6dc-dca6c5f71fc8"
+        ]
+      }
+    },
+    "learn-by-doing-taskfile": {
+      "title": "Learn By Doing: Taskfile",
+      "completed_modules": [],
+      "completed_lessons": {
+        "7c0c19f3-9a9c-40d9-80e6-3bf640425fc0": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "ai-assisted-development": {
+      "title": "AI-Assisted Development",
+      "completed_modules": [],
+      "completed_lessons": {
+        "bd3f2371-5582-4ed0-8116-c74ae7e5cbff": [
+          "71c61067-8332-4133-acad-5de966389f7a",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "d64636e3-1af6-4ab7-934f-5676c4266ac7": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "cursor-ai": {
+      "title": "Cursor AI",
+      "completed_modules": [],
+      "completed_lessons": {
+        "1ca163cf-4d24-4135-a1e6-ff2848c741bf": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "e11e1c1e-9b6b-4c53-b14a-24babbd114a5": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "ai-102-microsoft-certified-azure-ai-engineer-associate": {
+      "title": "AI-102: Microsoft Certified Azure AI Engineer Associate",
+      "completed_modules": [],
+      "completed_lessons": {
+        "255b99b5-5855-40fd-8400-1fdf22342b1f": [
+          "5cbd86f3-d1a5-4f73-8cb9-05f00b4e0c1e",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "az-104-microsoft-azure-administrator": {
+      "title": "[Updated] AZ-104: Microsoft Azure Administrator",
+      "completed_modules": [],
+      "completed_lessons": {
+        "edb6b82d-2942-45b9-89e9-33fbe75528c2": [
+          "69780942-8ad9-4c55-b4f4-4e7cb1efe666",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "07e3a37e-65a9-430c-9919-011cc605b25d": [
+          "5aea674a-cda9-43f9-8c67-ebf23956d2ce",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "0bf32076-a1d9-4b17-92e1-fff80a8ea179": [
+          "33ad48fd-04c2-46a0-8754-161268bf2cd7",
+          "3f208030-7ccd-46ba-99e5-72f89504d672",
+          "9a50885a-fcdb-43af-b0d4-1e118ec7afe0"
+        ]
+      }
+    },
+    "certified-kubernetes-security-specialist-cks": {
+      "title": "Certified Kubernetes Security Specialist (CKS)",
+      "completed_modules": [],
+      "completed_lessons": {
+        "634a64ac-045c-479e-8d6a-6e2514af768d": [
+          "a7843568-8ee4-45fd-9f4f-57729ad9376f",
+          "18057039-e399-4593-9ac1-919bc7026f9d",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "9c6c64a8-08e3-41f3-b9b4-30849336e6f9": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "eac6dac8-4481-4138-96ef-a2135f20e05e": [
+          "dd83ecb0-6e3a-4824-b429-a3a66e82caa7",
+          "2ad12e12-d321-48cc-b3bb-ba7420ae12db",
+          "1d222766-30c7-4612-96d1-d3ab3e3d2880",
+          "fb96dc10-dae5-493c-89a6-d9f1cd3ef8d2",
+          "3df9816c-3d54-49b9-bc4c-580b1ce22e78",
+          "42cf821c-38ef-4cd5-abce-dfcaf0250c11",
+          "416fc31d-8436-4fb2-be44-8d29bee19334",
+          "3e7ad1e6-8aa3-476b-8e26-7c48659ae91e",
+          "21b98d07-d99b-42d2-8f54-c102b7322fc8",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "d67be5ee-871d-4435-a187-382610cb6a1f": [
+          "2c77e1ac-9f63-4ef2-bfc8-0ac215cbc948",
+          "a44d2916-ccf5-4142-8a13-e2eb6aa9115e",
+          "a3de159e-163f-42e1-b185-6fee8fb32845"
+        ],
+        "7431dd03-f5c2-4ebb-b94a-2d35615bbd8c": [
+          "a3ca9b49-2589-4497-afb1-213b9c4dc47d",
+          "62d4b63b-aec3-4d0e-93c0-ebac126fda89",
+          "23fae70c-39fb-4b87-b1d8-8a8233352ad4",
+          "cb91290b-c3f5-41a5-af2f-ec2666bf6da6"
+        ],
+        "c0d849e1-54be-4d78-8936-6ce49434b88d": [
+          "a0ef0f85-fd76-4051-afa6-a705470c388e"
+        ],
+        "8d7f7d5b-47ad-496b-9a30-49eedc61f7fa": [
+          "1b1227c7-4d4c-4b50-a2c6-8f2ed5097e66",
+          "eb03b806-07ff-4355-888e-29238ce0f5a7",
+          "56ffeb6f-e309-4b8c-8dca-f3b38dd1e56d",
+          "2c64a4a3-f326-4035-935f-1dafc40a36f8"
+        ]
+      }
+    },
+    "terraform-basics-training-course": {
+      "title": "Terraform Basics Training Course",
+      "completed_modules": [],
+      "completed_lessons": {
+        "13edca3c-ac36-4a54-9283-df4cb725963f": [
+          "74ca4d13-de96-44f2-b7ae-395248e3de33",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "aws-solutions-architect-associate-certification": {
+      "title": "AWS Solutions Architect Associate Certification",
+      "completed_modules": [],
+      "completed_lessons": {
+        "1a87a522-2fb5-41e9-a36f-0157341c75d9": [
+          "25a32604-0fa9-450b-a4fc-dff8cec3a8c8"
         ]
       }
     }
