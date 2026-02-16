@@ -1,0 +1,8 @@
+Downloads/
+cookie.txt
+__pycache__/
+*.pyc
+.gemini/
+.agent/
+debug_*.py
+mnm_*/
