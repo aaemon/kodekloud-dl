@@ -12,6 +12,7 @@ import os
 import requests
 import json
 import re
+from datetime import datetime
 from tqdm import tqdm
 from urllib.parse import urljoin, unquote
 from bs4 import BeautifulSoup
@@ -19,18 +20,18 @@ from markdownify import markdownify as md
 
 # Configuration
 COOKIES_FILE = 'cookie.txt'
+PROGRESS_FILE = 'progress.json'
 BASE_URL = 'https://kodekloud.com'
 API_BASE = 'https://learn-api.kodekloud.com/api'
 LEARN_BASE = 'https://learn.kodekloud.com'
-LEARN_BASE = 'https://learn.kodekloud.com'
-# DOWNLOAD_DIR = 'Downloads' # Will prompt or default in main if needed but script uses global
-DOWNLOAD_DIR = 'Downloads' # Keeping default, user can change in code or we can prompt. User said "remove the download" which might mean delete the folder. Code can keep usage.
+DOWNLOAD_DIR = 'Downloads'
 
 class KodeKloudDownloader:
     def __init__(self, cookie_file):
         self.cookie_file = cookie_file
         self.session = requests.Session()
         self.token = None
+        self.progress = self._load_progress()
         
         if self.cookie_file and os.path.exists(self.cookie_file):
              self.token = self._load_cookies()
@@ -71,6 +72,54 @@ class KodeKloudDownloader:
             print(f"Error parsing cookie file: {e}")
             
         return session_token
+
+    def _load_progress(self):
+        """Load download progress from JSON file."""
+        if os.path.exists(PROGRESS_FILE):
+            try:
+                with open(PROGRESS_FILE, 'r') as f:
+                    return json.load(f)
+            except Exception as e:
+                print(f"Warning: Could not load progress file: {e}")
+        return {"last_updated": None, "courses": {}}
+    
+    def _save_progress(self):
+        """Save download progress to JSON file."""
+        try:
+            self.progress["last_updated"] = datetime.utcnow().isoformat() + "Z"
+            with open(PROGRESS_FILE, 'w') as f:
+                json.dump(self.progress, f, indent=2)
+        except Exception as e:
+            print(f"Warning: Could not save progress: {e}")
+    
+    def _is_lesson_completed(self, course_slug, module_id, lesson_id):
+        """Check if a lesson has been completed."""
+        course_data = self.progress.get("courses", {}).get(course_slug, {})
+        completed_lessons = course_data.get("completed_lessons", {}).get(str(module_id), [])
+        return str(lesson_id) in completed_lessons
+    
+    def _mark_lesson_completed(self, course_slug, course_title, module_id, lesson_id):
+        """Mark a lesson as completed in progress tracking."""
+        if "courses" not in self.progress:
+            self.progress["courses"] = {}
+        
+        if course_slug not in self.progress["courses"]:
+            self.progress["courses"][course_slug] = {
+                "title": course_title,
+                "completed_modules": [],
+                "completed_lessons": {}
+            }
+        
+        course_data = self.progress["courses"][course_slug]
+        module_id_str = str(module_id)
+        
+        if module_id_str not in course_data["completed_lessons"]:
+            course_data["completed_lessons"][module_id_str] = []
+        
+        if str(lesson_id) not in course_data["completed_lessons"][module_id_str]:
+            course_data["completed_lessons"][module_id_str].append(str(lesson_id))
+        
+        self._save_progress()
 
     def sanitize_filename(self, name):
         return re.sub(r'[\\/*?:"<>|]', "", name).strip()
@@ -122,12 +171,16 @@ class KodeKloudDownloader:
             print(f"Error fetching course details: {e}")
             return None
 
-    def download_lesson(self, lesson, course_slug, module_id, output_dir, course_id):
+    def download_lesson(self, lesson, course_slug, course_title, module_id, output_dir, course_id):
         """Downloads a single lesson content using API and converting to Markdown."""
         lesson_title = lesson.get('title', 'Unknown Lesson')
         lesson_id = lesson.get('id')
         lesson_type = lesson.get('type')
-        # course_id passed as arg
+        
+        # Check if lesson already completed
+        if self._is_lesson_completed(course_slug, module_id, lesson_id):
+            print(f"  Skipping (already completed): {lesson_title}")
+            return
 
         # Flattened structure: Save directly to output_dir (which is the Module folder)
         target_dir = output_dir 
@@ -137,8 +190,14 @@ class KodeKloudDownloader:
         safe_lesson_title = self.sanitize_filename(lesson_title)
         md_filename = f"{safe_lesson_title}.md"
         md_path = os.path.join(target_dir, md_filename)
+        
+        # Check if file already exists
+        if os.path.exists(md_path):
+            print(f"  Skipping (file exists): {lesson_title}")
+            self._mark_lesson_completed(course_slug, course_title, module_id, lesson_id)
+            return
 
-        print(f"Processing: {lesson_title} ({lesson_type})")
+        print(f"  Downloading: {lesson_title} ({lesson_type})")
 
         try:
              # Fetch from API
@@ -226,6 +285,9 @@ class KodeKloudDownloader:
                     f.write(f"# {lesson_title}\n\n")
                     f.write(final_content)
                 
+                # Mark lesson as completed
+                self._mark_lesson_completed(course_slug, course_title, module_id, lesson_id)
+                
                 # Download PDFs (from soup of original content if HTML)
                 if is_html:
                     pdf_links = soup.find_all('a', href=re.compile(r'\.pdf$', re.I))
@@ -265,6 +327,7 @@ class KodeKloudDownloader:
 
     def _download_file(self, url, path):
         if os.path.exists(path):
+            print(f"    Skipping (exists): {os.path.basename(path)}")
             return 
             
         print(f"  Downloading: {os.path.basename(path)}")
@@ -280,6 +343,47 @@ class KodeKloudDownloader:
                         bar.update(size)
         except Exception as e:
              print(f"  Failed to download file: {e}")
+
+
+def parse_selection_input(input_str, max_value):
+    """Parse user input like '1-10, 15, 16-19' into a list of indices.
+    
+    Args:
+        input_str: User input string with ranges and comma-separated values
+        max_value: Maximum valid index (1-based)
+    
+    Returns:
+        List of valid indices (0-based) or None if invalid
+    """
+    if not input_str or not input_str.strip():
+        return None
+    
+    indices = set()
+    parts = input_str.split(',')
+    
+    try:
+        for part in parts:
+            part = part.strip()
+            if '-' in part:
+                # Range like "1-10"
+                start, end = part.split('-', 1)
+                start, end = int(start.strip()), int(end.strip())
+                if start < 1 or end > max_value or start > end:
+                    print(f"Invalid range: {part} (valid: 1-{max_value})")
+                    return None
+                indices.update(range(start - 1, end))  # Convert to 0-based
+            else:
+                # Single number
+                num = int(part)
+                if num < 1 or num > max_value:
+                    print(f"Invalid number: {num} (valid: 1-{max_value})")
+                    return None
+                indices.add(num - 1)  # Convert to 0-based
+        
+        return sorted(list(indices))
+    except ValueError:
+        print(f"Invalid input format. Use numbers, ranges (1-10), and commas (1,2,3)")
+        return None
 
 
 def main():
@@ -319,34 +423,35 @@ def main():
 
     print(f"\nFound {len(courses)} courses.")
     
-    search_query = input("Search for a course (leave empty to list all): ").strip().lower()
-    filtered_courses = [c for c in courses if search_query in c['title'].lower()] if search_query else courses
-    
-    if not filtered_courses:
-        print("No matching courses.")
-        return
+    # Always show all courses (no search prompt)
+    filtered_courses = courses
 
     print(f"\n0. Download All Courses ({len(filtered_courses)} courses)")
     for i, c in enumerate(filtered_courses):
         print(f"{i+1}. {c['title']}")
         
     try:
-        choice_str = input("\nEnter course number (or '0' for All): ").strip()
+        choice_str = input("\nEnter course number(s) (e.g., '1-10, 15, 16-19' or '0' for All): ").strip()
         
         courses_to_process = []
         if choice_str == '0':
             courses_to_process = filtered_courses
-        elif choice_str.isdigit():
-            choice = int(choice_str) - 1
-            if 0 <= choice < len(filtered_courses):
-                courses_to_process = [filtered_courses[choice]]
+        else:
+            # Parse range/comma-separated input
+            selected_indices = parse_selection_input(choice_str, len(filtered_courses))
+            if selected_indices is None:
+                print("Invalid selection.")
+                return
+            courses_to_process = [filtered_courses[i] for i in selected_indices]
         
         if not courses_to_process:
              print("Invalid selection.")
              return
 
         for selected in courses_to_process:
-            print(f"\nProcessing Course: {selected['title']}")
+            print(f"\n{'='*60}")
+            print(f"Processing Course: {selected['title']}")
+            print(f"{'='*60}")
             
             details = downloader.get_course_details(selected['slug'])
             if not details:
@@ -354,20 +459,19 @@ def main():
 
             modules = details.get('modules', [])
             course_slug = selected['slug']
+            course_title = selected['title']
             
-            # If downloading multiple courses, confirm or auto-select ALL modules?
-            # User request "keep option to download for all courses" implies full download.
-            # So for "All Courses" mode, we force "All Modules".
-            
+            # Always show all modules (no search prompt)
             modules_to_dl = []
             if len(courses_to_process) > 1:
                 # Automatic "All Modules" for bulk course download
                 print(f"  Auto-selecting all {len(modules)} modules...")
                 modules_to_dl = [(i+1, m) for i, m in enumerate(modules)]
             else:
-                # Single course selection - Prompt for modules
+                # Single course selection - Show all modules and prompt
+                print("\nModules:")
                 for i, m in enumerate(modules):
-                    print(f"{i+1}. {m['title']} ({m.get('lessons_count', 0)} lessons)")
+                    print(f"  {i+1}. {m['title']} ({m.get('lessons_count', 0)} lessons)")
                     
                 mod_choice = input("\nEnter module number (or 'A' for All): ").strip().upper()
                 
@@ -405,7 +509,7 @@ def main():
                 lessons = module.get('lessons', [])
                 for lesson in lessons:
                     course_id = details.get('id') # Available in details
-                    downloader.download_lesson(lesson, course_slug, module_id, module_dir, course_id)
+                    downloader.download_lesson(lesson, course_slug, course_title, module_id, module_dir, course_id)
                     
         print("\nAll downloads completed!")
 

@@ -1,0 +1,79 @@
+{
+  "last_updated": "2026-02-16T14:13:09.994722Z",
+  "courses": {
+    "crash-course-docker-for-absolute-beginner": {
+      "title": "Crash Course: Docker For Absolute Beginners",
+      "completed_modules": [],
+      "completed_lessons": {
+        "f4c089c7-24c8-488f-bb50-bbf844810374": [
+          "dc90f8db-ac50-4b2c-81b5-b1db09cebfb5",
+          "144a7dfa-5b34-4ab6-9aa0-ebfc10ca8d27"
+        ]
+      }
+    },
+    "crash-course-kubernetes-for-absolute-beginners": {
+      "title": "Crash Course: Kubernetes For Absolute Beginners",
+      "completed_modules": [],
+      "completed_lessons": {
+        "c648e3a3-f425-456e-af2d-4d5526626094": [
+          "6f2f4d77-05af-44ff-b03d-6ac56d2c28bd"
+        ]
+      }
+    },
+    "crash-course-linux-for-absolute-beginners": {
+      "title": "Crash Course: Linux For Absolute Beginners",
+      "completed_modules": [],
+      "completed_lessons": {
+        "ad9775dd-41c2-4d59-ae9a-6b18672ecbac": [
+          "91d4d1e5-fa80-4a69-b24e-98bd7a025a64"
+        ]
+      }
+    },
+    "crash-course-aws-basics": {
+      "title": "Crash Course: AWS Basics",
+      "completed_modules": [],
+      "completed_lessons": {
+        "76d6cbfc-c16d-4f87-a93c-31cfa5f795f7": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7",
+          "2c28ecf6-7e5c-45a5-9900-3468fb81e7ff"
+        ]
+      }
+    },
+    "crash-course-mcp-for-beginners": {
+      "title": "Crash Course: MCP For Beginners",
+      "completed_modules": [],
+      "completed_lessons": {
+        "f1e44479-23c8-46ec-b1b9-d9e90146921b": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7",
+          "6833cc0a-5779-4923-88b3-0ecc5a83cea9",
+          "317f1c71-2671-4887-a82a-5a9133a925c0"
+        ]
+      }
+    },
+    "crash-course-ai-powered-devops": {
+      "title": "Crash Course: AI-Powered DevOps",
+      "completed_modules": [],
+      "completed_lessons": {
+        "3cf1aaab-201c-4dc4-8d28-0d96464782a2": [
+          "d36ae462-704d-461a-9050-5c1d829836ab"
+        ],
+        "67d32ecd-03b2-4ad8-bcd8-1823f5017441": [
+          "af867f4b-8dd3-4b5f-95fe-24ef1de49503"
+        ]
+      }
+    },
+    "fundamentals-of-sre": {
+      "title": "Fundamentals of SRE",
+      "completed_modules": [],
+      "completed_lessons": {
+        "2ed55f19-4a35-40be-9509-e57187ab4866": [
+          "7bda75ea-fcda-4fe1-bba8-2e0ef7770270",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "e801ee3d-7ee7-4029-8c2d-b95c6b6bdf7e": [
+          "01578d8e-edf1-49be-8cf3-8c287bf8bd35"
+        ]
+      }
+    }
+  }
+}
