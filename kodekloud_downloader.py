@@ -511,7 +511,20 @@ def main():
                     course_id = details.get('id') # Available in details
                     downloader.download_lesson(lesson, course_slug, course_title, module_id, module_dir, course_id)
                     
-        print("\nAll downloads completed!")
+        
+        # Display summary
+        print(f"\n{'='*60}")
+        print("Download Summary")
+        print(f"{'='*60}")
+        print(f"User Input: {choice_str}")
+        print(f"Total Courses Downloaded: {len(courses_to_process)}")
+        print("\nCourses:")
+        for idx, course in enumerate(courses_to_process, 1):
+            # Find original index in filtered_courses
+            original_idx = filtered_courses.index(course) + 1
+            print(f"  {original_idx}. {course['title']}")
+        print(f"\n{'='*60}")
+        print("All downloads completed!")
 
     except ValueError:
         print("Invalid input.")

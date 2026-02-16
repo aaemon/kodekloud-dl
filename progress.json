@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-16T14:13:09.994722Z",
+  "last_updated": "2026-02-16T14:55:34.178565Z",
   "courses": {
     "crash-course-docker-for-absolute-beginner": {
       "title": "Crash Course: Docker For Absolute Beginners",
@@ -72,6 +72,609 @@
         ],
         "e801ee3d-7ee7-4029-8c2d-b95c6b6bdf7e": [
           "01578d8e-edf1-49be-8cf3-8c287bf8bd35"
+        ]
+      }
+    },
+    "cka-certification-course-certified-kubernetes-administrator": {
+      "title": "Certified Kubernetes Administrator (CKA)",
+      "completed_modules": [],
+      "completed_lessons": {
+        "7d880b2d-bb2d-48a2-a1dc-9064f97596fe": [
+          "63331453-c5aa-47b8-b12a-b895470781a6",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "c6d2ac7d-8192-4cff-aa54-e36d888c5bd9": [
+          "23a464ed-51a6-4c48-9ebd-d126d380a3ad",
+          "838a2693-38ad-4725-bf28-4bd4a18fc19d",
+          "7814bc96-9352-4348-82f0-783f19cde47b",
+          "df7ca8e2-0c84-4c5b-ab68-55198636a7a8",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1",
+          "d1d3fc1b-12c9-4811-9f47-d02031db2221"
+        ],
+        "cd124bdf-9911-4cc1-8177-f2d8b6dfd2a0": [
+          "5bdc8a34-7b5a-4437-9a06-2d921598ea62",
+          "708efa2d-0eec-414d-bef2-9bd8b8b531d1",
+          "3f2c6987-ead4-42bb-825c-5bbd2c075727"
+        ],
+        "67ee36bc-fea0-4136-a5a9-40754b32c5f7": [
+          "50213cf6-8d76-44c5-8ca3-498bec30b9d3"
+        ],
+        "2ddcf79b-abb0-4aeb-ad0c-3d54c7b4fc64": [
+          "3a19636b-716b-4505-b516-2ba70a17788e",
+          "2c0570ad-5d44-425b-8420-0b96815636b0",
+          "6aaf4273-6b39-4c0b-abeb-bc2efb571cc5",
+          "27822812-d758-428d-91db-942db6800ab1",
+          "4090dc32-8853-48b3-9f37-db9af2ef71fb",
+          "1b053ac2-4be7-49a3-a5d5-18bf5e7a9756"
+        ],
+        "51676566-4860-4564-ad8e-4723a266211e": [
+          "8e5742f3-c8de-4ebd-81bc-75a76951e7a7",
+          "dc488b06-cfc5-41d7-81de-ab5c36be31cf",
+          "c96b0466-ff7a-48fd-9aad-92b8750989df",
+          "89026bdc-bf92-4011-aa42-94c9b5e2d5b0",
+          "13e567fd-3cd2-4359-83ec-79304ffe57a2"
+        ],
+        "77826599-d456-4cb5-8cbc-b713cc077b45": [
+          "71b7586c-4247-433b-afb4-cb1977843d49",
+          "91dd8819-ae06-448b-ad2c-b4eecf496213",
+          "504e8160-ab08-40a7-92da-0a868b4cb3b4"
+        ],
+        "883f0aa9-3aa9-45a6-bd26-3a87ded1e00e": [
+          "8e0977e5-1673-498a-8a50-e1d8bd979611",
+          "1dcd5c41-2226-4284-8bb3-e70df1af4883"
+        ],
+        "44bc9a9f-319c-40ee-babd-0f7b53a70de7": [
+          "68fd1f0a-d48e-4081-b90f-a8664cc85ec1",
+          "0cee34c0-16ee-4fc4-8741-75b5fa5c9852",
+          "33c17a91-e4b5-47a0-9212-c5c4c136c1a1",
+          "c11a00f5-0b77-4372-9926-08e8673e385d",
+          "812d479e-0655-44af-ab65-b69475a20e09",
+          "37a5f5e8-53b2-4f56-b5e1-23c1fd1a66ec",
+          "4b30c2a1-c65c-43ef-836d-83efa4e03383"
+        ],
+        "245617d7-2c45-44bc-84f8-5209c0e816d0": [
+          "c86d2034-c012-4ca5-8ddc-0ad1a892e946",
+          "882cedf2-4ba7-4ed9-acee-3541b88fd6ba"
+        ],
+        "357c2670-c16c-49ac-aa27-8af52523afde": [
+          "47f5c667-2941-4494-bc24-51e685301374"
+        ],
+        "aff99955-65fd-443e-950f-3b25d3311bc2": [
+          "00c05f1f-2b88-414e-b1bb-c22f83d00c1c",
+          "0f5d858d-e2a1-454f-a7b9-83c2e87f9bc9"
+        ],
+        "a00f585e-f8a2-4fb4-a438-c8af224ca342": [
+          "75991617-fbc6-4510-bbed-7a518a0bc135"
+        ],
+        "ff81e3c9-7d91-490f-80a0-3f1b69bb1e60": [
+          "a4fbb4ce-fc5e-4860-8558-d914d07c2469"
+        ],
+        "d33baa6d-ccd3-410b-a20c-5d5b9c7a2114": [
+          "0c209ba1-e460-47cf-a160-d4614212b720",
+          "04337ae0-5267-43ec-8276-6465645ddbf4",
+          "2c64a4a3-f326-4035-935f-1dafc40a36f8",
+          "56ffeb6f-e309-4b8c-8dca-f3b38dd1e56d"
+        ]
+      }
+    },
+    "aws-certified-ai-practitioner": {
+      "title": "AWS Certified AI Practitioner",
+      "completed_modules": [],
+      "completed_lessons": {
+        "2ec290b3-1c96-47ac-af02-8c0aa235cfb7": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "e79d4d90-43ff-4f6a-a5c0-fe2e960cb76d": [
+          "0e70ac90-9be1-4ab9-8a7f-d5ae0e23d607",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "kubernetes-and-cloud-native-security-associate-kcsa": {
+      "title": "Kubernetes and Cloud Native Security Associate (KCSA)",
+      "completed_modules": [],
+      "completed_lessons": {
+        "cf3e59bb-1643-4c16-a6b0-c0322ae07255": [
+          "d97fb231-d825-46eb-81cd-95df41cd1d5b",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "a0ddd095-0114-4aa4-b3a5-2b31e773f241": [
+          "b4b887ab-d23f-444a-a670-5377e99de9a5",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "0148994b-9ccc-4725-a77b-a4a63592152f": [
+          "ebfab5f0-24fe-4914-8483-ecb846da4796",
+          "3e17aecc-e77a-4517-8fdf-34072a3c9424"
+        ],
+        "6454e319-cede-4878-a6cf-621bd41f95cd": [
+          "2c64a4a3-f326-4035-935f-1dafc40a36f8"
+        ]
+      }
+    },
+    "fundamentals-of-mlops": {
+      "title": "Fundamentals of MLOps",
+      "completed_modules": [],
+      "completed_lessons": {
+        "0e2e3177-bf87-467e-9063-e8e0f7e095df": [
+          "26a3b4fc-29ad-4113-b172-785c0635d6d0",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "d72a3430-8b54-48d6-89ad-6a5f8b74f4ab": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "computer-architecture": {
+      "title": "Computer Architecture",
+      "completed_modules": [],
+      "completed_lessons": {
+        "960b647b-9129-4f10-ac03-7f598a5ca09f": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7",
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542"
+        ],
+        "c924270c-0aa1-48ba-90f9-ae102175c6b0": [
+          "1637e09d-3db7-402f-a1f7-5a63e07713a4"
+        ]
+      }
+    },
+    "aws-sagemaker": {
+      "title": "AWS SageMaker",
+      "completed_modules": [],
+      "completed_lessons": {
+        "a5b9a001-9205-4423-b395-957fee84177a": [
+          "f73268a2-db36-4955-bbc2-2b24a6aba712"
+        ]
+      }
+    },
+    "operating-systems-and-applications": {
+      "title": "Operating Systems and Applications",
+      "completed_modules": [],
+      "completed_lessons": {
+        "a58b0c0b-ab99-487d-8373-0cef2163288e": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7",
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542"
+        ],
+        "edbf48fe-cad8-4a13-ad00-644b613f7867": [
+          "1637e09d-3db7-402f-a1f7-5a63e07713a4"
+        ]
+      }
+    },
+    "networks-and-communications": {
+      "title": "Networks and Communications",
+      "completed_modules": [],
+      "completed_lessons": {
+        "3699346c-c8d5-4b8b-a63c-e8c2c12ab477": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7",
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542"
+        ],
+        "ef02f990-7cd1-40e2-90ed-b8fd88f079cb": [
+          "1637e09d-3db7-402f-a1f7-5a63e07713a4"
+        ]
+      }
+    },
+    "virtualization-and-containers": {
+      "title": "Virtualization and Containers",
+      "completed_modules": [],
+      "completed_lessons": {
+        "0e41196e-1ae3-43fb-a444-1e0b48253594": [
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "b3d0490b-ab50-46bb-837a-e82707aeb4d4": [
+          "1637e09d-3db7-402f-a1f7-5a63e07713a4"
+        ]
+      }
+    },
+    "mathematics-for-computing": {
+      "title": "Mathematics for Computing",
+      "completed_modules": [],
+      "completed_lessons": {
+        "6315ce84-788a-46d3-9c27-7ea08705f9e6": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7",
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542"
+        ],
+        "7badce97-9acb-48b8-9fb6-bd5ce7e09045": [
+          "1637e09d-3db7-402f-a1f7-5a63e07713a4"
+        ]
+      }
+    },
+    "aws-for-beginners-with-hands-on-labs": {
+      "title": "AWS For Beginners with Hands-On Labs",
+      "completed_modules": [],
+      "completed_lessons": {
+        "d28d64dd-cbb1-45ed-83c4-e8d4b0b0d08b": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "68a80d2a-9ede-43f1-a18e-84e7efe89dc6": [
+          "98d3c998-ed05-408d-b3af-2e41a34cd39e"
+        ]
+      }
+    },
+    "docker-training-course-for-the-absolute-beginner": {
+      "title": "Docker Training Course for the Absolute Beginner",
+      "completed_modules": [],
+      "completed_lessons": {
+        "cadd438c-e11b-445c-b802-029caf6d9b89": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "672dc9a2-52ce-467f-b00c-c2f16185479b": [
+          "eca938c4-75af-48a2-b281-59d55fcee6aa",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "a1c8a6ee-e49e-4f0d-9a21-0195826caedc": [
+          "ed73f612-e967-4c5e-a90e-c97ddf7bd641"
+        ],
+        "e4f7711c-d82a-4953-ab4c-bce10b901ed9": [
+          "2892e7e6-43a9-423f-8b9b-2a7cc90adaf9"
+        ]
+      }
+    },
+    "learning-linux-basics-course-labs": {
+      "title": "Learning Linux Basics Course & Labs",
+      "completed_modules": [],
+      "completed_lessons": {
+        "571673f9-96f0-4212-bd13-a61a069c9e1f": [
+          "53875bb2-d784-467a-b083-d3d8c25e83d5",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "267dec49-c3e9-4627-b7f8-9bf9aa834e53": [
+          "355fc378-f3e3-4c57-8ad1-4cddc78b32d8",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "19296611-5fb9-4e5d-a926-d157d3f3c3db": [
+          "985fde5a-b9af-4ff6-a334-7a618568c5be"
+        ]
+      }
+    },
+    "efk-stack-enterprise-grade-logging-and-monitoring": {
+      "title": "EFK Stack: Enterprise-Grade Logging and Monitoring",
+      "completed_modules": [],
+      "completed_lessons": {
+        "bc17ec94-c0d1-48b8-a1a2-217091c470ce": [
+          "7c592eb9-06b6-479a-ac1d-5d2d8ccc6439",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "ae5644c8-877b-4b9e-85a4-79cf721d6a0b": [
+          "b66acb95-248d-4882-81c6-f8b59ec21180",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "jenkins-project-building-ci-cd-pipeline-for-scalable-web-applications": {
+      "title": "Jenkins Project: Building CI/CD Pipeline for Scalable Web Applications",
+      "completed_modules": [],
+      "completed_lessons": {
+        "d50cea6d-7bc8-43c6-82b6-40a89e1c9f77": [
+          "68ed0a9a-963c-4f87-97bd-5bec57cf2652",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "4b025d4d-3ef9-479d-a483-3aa7a206a553": [
+          "cef75acd-f668-462c-9c87-0588919f2865",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "az-204-developing-solutions-for-microsoft-azure": {
+      "title": "AZ-204: Developing Solutions for Microsoft Azure",
+      "completed_modules": [],
+      "completed_lessons": {
+        "6bf85ae2-44c2-45e9-9086-d9f73c373efb": [
+          "524ec509-17a3-42d0-8e23-c759b6004c40",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "94d21b81-de82-4d33-a347-4404baa9f869": [
+          "166c0433-28e4-4354-93e5-6682dd990ab9",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "kubernetes-troubleshooting-for-application-developers": {
+      "title": "Kubernetes Troubleshooting for Application Developers",
+      "completed_modules": [],
+      "completed_lessons": {
+        "16f28a74-042b-40e7-95e1-8f37ee1c1b07": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "09c2c8a6-ba29-4d55-bea1-cd8584be9107": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "az-400": {
+      "title": "AZ-400: Designing and Implementing Microsoft DevOps Solutions",
+      "completed_modules": [],
+      "completed_lessons": {
+        "9eab326b-2560-4fcc-a30a-52c97d042247": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "503e97d4-be52-440b-8a4e-8610d1eca6ed": [
+          "84d3ea76-02b8-4d6c-9b36-816e77c82faa",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "jenkins-pipelines": {
+      "title": "Jenkins Pipelines",
+      "completed_modules": [],
+      "completed_lessons": {
+        "2e497679-eefa-49a8-89d5-4f198c342f41": [
+          "ecf2e200-0dcc-4656-80d1-a35f12ff57f3",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "a3bf42b8-d7de-4cf9-aeae-bc71ae305be6": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "f046d5d1-6fa6-4156-b38d-202ed885b64d": [
+          "163793e1-65e3-4abc-9912-938ea3ec57e1"
+        ]
+      }
+    },
+    "generative-ai-in-practice-advanced-insights-and-operations": {
+      "title": "Generative AI in Practice: Advanced Insights and Operations",
+      "completed_modules": [],
+      "completed_lessons": {
+        "f2002e8f-293c-437e-9a8b-ebaade2f1bfd": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "e250b780-055c-474c-8ff4-3070de67d39d": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "530aab3b-2236-4f0e-b1d6-089654d76036": [
+          "ec260acc-d37a-4bce-9fd1-86fbf035bde5"
+        ],
+        "76989388-6613-4f3f-a188-59c26e10e98a": [
+          "aace191f-2417-4d57-8aaa-690981e18830"
+        ]
+      }
+    },
+    "ai-900-microsoft-azure-ai-fundamental": {
+      "title": "AI-900: Microsoft Certified Azure AI Fundamentals",
+      "completed_modules": [],
+      "completed_lessons": {
+        "82935ed7-883a-4b77-b7e9-3be8ebebb9a5": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "4aa8cab9-feb5-489d-acd7-0c91443ad671": [
+          "3c368c76-c623-4c6a-8a05-72d62c081503",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "comptia-security-certification": {
+      "title": "CompTIA Security+ Certification",
+      "completed_modules": [],
+      "completed_lessons": {
+        "331a8a1c-b9d7-4d70-ba6e-bd10479cf2b7": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "1846e159-7ab4-46d3-be5d-95c1a0eb51b9": [
+          "855c8bca-4b4c-40a6-8458-21d7d901c67d",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "rust": {
+      "title": "Rust Programming",
+      "completed_modules": [],
+      "completed_lessons": {
+        "db7ede8b-f965-4beb-8e4f-d7e932329f74": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "b5f13fcf-f3bf-4b15-bd04-80798493bce7": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "migrating-jenkins-pipelines-to-github-actions": {
+      "title": "Migrating Jenkins Pipelines to GitHub Actions",
+      "completed_modules": [],
+      "completed_lessons": {
+        "4b72039d-b086-4331-9b30-0ce7dbd431be": [
+          "ea2bd422-3bf0-4d63-8676-62285028f038",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "claude-code-for-beginners": {
+      "title": "Claude Code For Beginners",
+      "completed_modules": [],
+      "completed_lessons": {
+        "0bd6d2b4-0fbf-4c4d-a348-af6c3321121c": [
+          "7fc27bf0-7dfc-4afa-8b2d-6699d21037b4",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "certified-cloud-native-platform-engineering-associate-cnpa": {
+      "title": "Prep Course - Certified Cloud Native Platform Engineering Associate (CNPA)",
+      "completed_modules": [],
+      "completed_lessons": {
+        "8110e623-d6f3-4066-9593-68e20f890dad": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "certified-argo-project-associate-capa": {
+      "title": "Prep Course - Certified Argo Project Associate (CAPA)",
+      "completed_modules": [],
+      "completed_lessons": {
+        "c88c4a06-cdc7-4152-b2aa-a1fb02589846": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "devops-pre-requisite-course": {
+      "title": "DevOps Pre-Requisite Course",
+      "completed_modules": [],
+      "completed_lessons": {
+        "c990b480-a646-4321-89b4-a6fbc217f4e2": [
+          "ef974373-cb2c-47e9-8f8e-ca957ca2466b",
+          "25b1a4b1-a9a9-4f48-8639-a8045cc11ddd",
+          "276508df-634f-4853-a4ae-6bc5dc8517a1",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "1327c721-3e41-4b9d-8cd5-45dafdfe5d7b": [
+          "6bf862ba-4469-40b0-a0bb-82741631d9ce"
+        ]
+      }
+    },
+    "cloud-native-buildpacks": {
+      "title": "Cloud Native Buildpacks",
+      "completed_modules": [],
+      "completed_lessons": {
+        "de8c11e5-2a31-4f82-86da-aa0b5a1b907f": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "d2170747-7a07-4648-b449-958edfff954b": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "pytorch": {
+      "title": "PyTorch",
+      "completed_modules": [],
+      "completed_lessons": {
+        "5a59db15-2490-4be0-a894-4b3d3cc78fac": [
+          "84b584fb-8096-47b8-85ae-30838b8ab000",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "f9d4b50b-328e-4cf7-a22a-3b236bf0abcd": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "certified-backstage-associate-cba": {
+      "title": "Prep Course - Certified Backstage Associate (CBA) Certification",
+      "completed_modules": [],
+      "completed_lessons": {
+        "aa692961-a0a1-49f4-b0c5-d3af3b5afb4b": [
+          "052ff567-6d30-46bb-93f6-6dc9873ccc4e",
+          "49135daf-f73c-4474-be2b-5e94878d9024",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7",
+          "2b3b41a4-7dbf-41d7-b1d6-0b091d109658"
+        ],
+        "fcbbf923-69c3-4147-bd51-18db2bd18957": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "certified-jenkins-engineer": {
+      "title": "Certified Jenkins Engineer",
+      "completed_modules": [],
+      "completed_lessons": {
+        "2e8ea9bb-e5bb-428e-85d9-89f2eb816adb": [
+          "7a9cd6d1-5f93-41ef-b793-afbda95a2a3a",
+          "1234d362-d685-45f4-88db-5f210b879aca",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "7ab00946-0edd-4a13-b5c8-1b5001779f1c": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "cilium-certified-associate-cca": {
+      "title": "Prep Course - Cilium Certified Associate (CCA) Certification",
+      "completed_modules": [],
+      "completed_lessons": {
+        "7d8b3ee7-bf76-4895-804e-ed083146ca1a": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "database-fundamentals": {
+      "title": "Database Fundamentals",
+      "completed_modules": [],
+      "completed_lessons": {
+        "774d0759-f241-4acf-bf3c-3533b24824a4": [
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "data-engineering-fundamentals": {
+      "title": "Data Engineering Fundamentals",
+      "completed_modules": [],
+      "completed_lessons": {
+        "199ab77b-10ff-4f89-b148-5294523842bc": [
+          "0f9b4c75-e1bd-4a72-9f7f-a88e7a6b4542",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "0340c50b-2dcb-4cd0-86c5-6570c8c4382e": [
+          "9d4467e0-33d5-4b50-b527-c955355d25a3"
+        ],
+        "f17697f1-d2a6-4c31-ab29-55e51617dace": [
+          "67321b0a-5dfb-45c8-aa5f-3d2d4f69e7e8"
+        ],
+        "2ce5f2e5-ef3a-4e38-a1fd-e95790245533": [
+          "3569658b-2ac5-45e6-870f-3a8990891cef"
+        ]
+      }
+    },
+    "kubernetes-for-the-absolute-beginners-hands-on-tutorial": {
+      "title": "Kubernetes for the Absolute Beginners - Hands-on Tutorial",
+      "completed_modules": [],
+      "completed_lessons": {
+        "eb9e6792-d788-499d-8afe-13f2427c1e57": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "101e958e-d0aa-4b44-8f0b-abda59a1e398": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ],
+        "5b966a64-54c6-46ff-b284-4299f34c8f84": [
+          "b1506b1b-9e80-4ba8-9ad4-16429d8cd141"
+        ],
+        "a603e70d-8473-4de4-aec9-7cc76c396ad3": [
+          "a6d1d753-f714-4332-8939-25d0e974b42f"
+        ],
+        "d62e1702-30be-44bb-87da-49bb2a18e406": [
+          "75128364-b86e-4870-9e7b-55096d40ffa0",
+          "56ffeb6f-e309-4b8c-8dca-f3b38dd1e56d"
+        ]
+      }
+    },
+    "advanced-jenkins": {
+      "title": "Advanced Jenkins",
+      "completed_modules": [],
+      "completed_lessons": {
+        "60bfe853-6ad7-4041-bad5-cf4419fe5f07": [
+          "475505a3-3ad1-420b-9bc8-32ff510ceb5e",
+          "d69a06be-44ec-443d-803f-4ff7bf2cc07d",
+          "efd1b014-2bd3-440b-b419-a33307776ae5",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "7e7be52f-69f5-496b-8a46-322d6b8df0ce": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "github-copilot-in-action": {
+      "title": "GitHub Copilot in Action",
+      "completed_modules": [],
+      "completed_lessons": {
+        "fb848134-d908-42a6-b195-1ea9c9cd1ffe": [
+          "f1aec575-6997-4d48-88ac-ca70ad47f8c0",
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ]
+      }
+    },
+    "event-streaming-with-kafka": {
+      "title": "Event Streaming with Kafka",
+      "completed_modules": [],
+      "completed_lessons": {
+        "37830f43-1d16-4aa1-899d-2c6914ee72b0": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
+        ],
+        "2359e80d-66f6-4080-8e9c-d81a6a1600fe": [
+          "276508df-634f-4853-a4ae-6bc5dc8517a1"
+        ]
+      }
+    },
+    "finops-certified-practitioner": {
+      "title": "Prep Course - FinOps Certified Practitioner",
+      "completed_modules": [],
+      "completed_lessons": {
+        "24982811-6142-4554-afd8-2b5f3b8a7f28": [
+          "74d568de-7193-4beb-947d-f209b3dbf3a7"
         ]
       }
     }
