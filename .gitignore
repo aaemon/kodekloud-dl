@@ -6,3 +6,5 @@ __pycache__/
 .agent/
 debug_*.py
 mnm_*/
+progress.json
+
