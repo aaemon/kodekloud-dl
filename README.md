@@ -6,12 +6,16 @@ A Python script to download course content (Markdown & PDFs) from KodeKloud.
 -   **Interactive Authentication**: Prompts for your session cookie (token) if `cookie.txt` is not found.
 -   **Smart Content Extraction**: Converts HTML lesson pages to clean Markdown.
 -   **Resource Downloading**: Automatically downloads embedded Images and PDFs.
+-   **Video Downloads**: Downloads video lessons in 1080p quality (falls back to 720p if unavailable) with VTT subtitles using yt-dlp.
+-   **Multi-Course Selection**: Download multiple courses using ranges (e.g., `1-10, 15, 16-19`).
+-   **Progress Tracking**: Resumes downloads after interruption, skips already downloaded files.
 -   **Flattened Structure**: Saves files directly in numbered module folders (e.g., `2. Core Concepts/Lesson.md`).
 -   **Download All**: Option to download **ALL** your enrolled courses in one go.
 
 ## Prerequisites
 -   Python 3.8+
 -   `pipx` (Recommended for running without virtualenv management) or `pip`.
+-   `yt-dlp` for video downloads (automatically installed with requirements)
 
 ## How to Run
 
@@ -48,12 +52,15 @@ The script needs your KodeKloud **Session Cookie** to access your courses.
 
 1.  **List Courses**: The script will fetch and list all your enrolled courses.
 2.  **Select Course**:
-    -   Enter the number of a specific course (e.g., `1`).
+    -   Enter course numbers or ranges (e.g., `1-10, 15, 16-19`)
     -   **OR** Enter `0` to **Download All Courses**.
 3.  **Select Modules** (If a single course was selected):
     -   Enter `A` to download ALL modules.
     -   **OR** Enter a specific module number.
 4.  **Download**: Content will be saved to the `Downloads/` directory, organized by Course and Module.
+    -   **Markdown files** (`.md`) for text content
+    -   **Video files** (`.mkv`) with embedded subtitles (`.vtt`) in 1080p quality (or 720p if 1080p unavailable)
+    -   **PDFs** and other resources
 
 ## Run on Another Server
 

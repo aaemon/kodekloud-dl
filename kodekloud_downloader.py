@@ -17,6 +17,7 @@ from tqdm import tqdm
 from urllib.parse import urljoin, unquote
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
+import yt_dlp
 
 # Configuration
 COOKIES_FILE = 'cookie.txt'
@@ -25,6 +26,8 @@ BASE_URL = 'https://kodekloud.com'
 API_BASE = 'https://learn-api.kodekloud.com/api'
 LEARN_BASE = 'https://learn.kodekloud.com'
 DOWNLOAD_DIR = 'Downloads'
+VIDEO_QUALITY = '1080p'  # Default video quality
+DOWNLOAD_VIDEOS = True  # Enable video downloads by default
 
 class KodeKloudDownloader:
     def __init__(self, cookie_file):
@@ -185,10 +188,20 @@ class KodeKloudDownloader:
         safe_lesson_title = self.sanitize_filename(lesson_title)
         md_filename = f"{safe_lesson_title}.md"
         md_path = os.path.join(target_dir, md_filename)
+        video_path = os.path.join(target_dir, f"{safe_lesson_title}.mkv")
         
         # Check if file already exists on disk (primary check)
-        if os.path.exists(md_path):
-            print(f"  Skipping (file exists): {lesson_title}")
+        # For video lessons, check for .mkv file; for others, check for .md file
+        file_exists = False
+        if lesson_type == 'video' and DOWNLOAD_VIDEOS:
+            file_exists = os.path.exists(video_path)
+            file_type = "video"
+        else:
+            file_exists = os.path.exists(md_path)
+            file_type = "file"
+        
+        if file_exists:
+            print(f"  Skipping ({file_type} exists): {lesson_title}")
             # Mark as completed if not already marked
             if not self._is_lesson_completed(course_slug, module_id, lesson_id):
                 self._mark_lesson_completed(course_slug, course_title, module_id, lesson_id)
@@ -198,6 +211,40 @@ class KodeKloudDownloader:
         if self._is_lesson_completed(course_slug, module_id, lesson_id):
             print(f"  Re-downloading (file missing): {lesson_title}")
 
+        # Handle video lessons
+        if lesson_type == 'video' and DOWNLOAD_VIDEOS:
+            try:
+                # Fetch video URL from API
+                url = f"{API_BASE}/lessons/{lesson_id}?course_id={course_id}"
+                response = self.session.get(url)
+                
+                if response.status_code != 200:
+                    print(f"  Failed to fetch video data (Status: {response.status_code})")
+                    return
+                
+                data = response.json()
+                video_url = data.get('video_url')
+                
+                if video_url:
+                    # Convert to Vimeo player URL
+                    vimeo_id = video_url.split('/')[-1]
+                    player_url = f"https://player.vimeo.com/video/{vimeo_id}"
+                    
+                    # Download video with subtitles
+                    video_path = os.path.join(target_dir, safe_lesson_title)
+                    success = self.download_video_with_subtitles(player_url, video_path, VIDEO_QUALITY)
+                    
+                    if success:
+                        # Mark as completed
+                        self._mark_lesson_completed(course_slug, course_title, module_id, lesson_id)
+                    return
+                else:
+                    print(f"  No video URL found for: {lesson_title}")
+                    return
+            except Exception as e:
+                print(f"  Error processing video lesson: {e}")
+                return
+        
         print(f"  Downloading: {lesson_title} ({lesson_type})")
 
         try:
@@ -344,6 +391,44 @@ class KodeKloudDownloader:
                         bar.update(size)
         except Exception as e:
              print(f"  Failed to download file: {e}")
+    
+    def download_video_with_subtitles(self, video_url, output_path, quality='1080p'):
+        """Download video with subtitles using yt-dlp."""
+        if os.path.exists(f"{output_path}.mkv"):
+            print(f"    Skipping (video exists): {os.path.basename(output_path)}.mkv")
+            return True
+        
+        print(f"  Downloading video: {os.path.basename(output_path)}")
+        
+        headers = {
+            'Referer': 'https://learn.kodekloud.com/',
+        }
+        
+        ydl_opts = {
+            # Try 1080p first, fallback to 720p, then best available
+            'format': 'bestvideo[height<=1080]+bestaudio/bestvideo[height<=720]+bestaudio/best',
+            'concurrent_fragment_downloads': 15,
+            'outtmpl': f'{output_path}.%(ext)s',
+            'cookiefile': self.cookie_file,
+            'merge_output_format': 'mkv',
+            'writesubtitles': True,
+            'writeautomaticsub': True,
+            'subtitleslangs': ['en'],
+            'http_headers': headers,
+            'quiet': True,
+            'no_warnings': True,
+        }
+        
+        try:
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                ydl.download([video_url])
+            return True
+        except yt_dlp.utils.DownloadError as e:
+            print(f"  Failed to download video: {e}")
+            return False
+        except Exception as e:
+            print(f"  Error downloading video: {e}")
+            return False
 
 
 def parse_selection_input(input_str, max_value):
