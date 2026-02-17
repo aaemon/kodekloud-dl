@@ -5,6 +5,7 @@
 #     "beautifulsoup4",
 #     "tqdm",
 #     "markdownify",
+#     "yt-dlp",
 # ]
 # ///
 

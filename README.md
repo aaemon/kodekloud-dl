@@ -13,26 +13,19 @@ A Python script to download course content (Markdown & PDFs) from KodeKloud.
 -   **Download All**: Option to download **ALL** your enrolled courses in one go.
 
 ## Prerequisites
--   Python 3.8+
--   `pipx` (Recommended for running without virtualenv management) or `pip`.
--   `yt-dlp` for video downloads (automatically installed with requirements)
+-   Python 3.11+ (for inline script metadata support)
+-   `pipx` (for automatic dependency management)
 
 ## How to Run
 
-### Method 1: Using `pipx` (Recommended)
-Run the script directly with dependencies:
+### Simple Method (Recommended)
+
+Just run with `pipx` - it will automatically install all dependencies:
+
 ```bash
 pipx run ./kodekloud_downloader.py
 ```
 
-### Method 2: Standard Python
-1.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-2.  Run the script:
-    ```bash
-    python3 kodekloud_downloader.py
     ```
 
 ## Authentication
